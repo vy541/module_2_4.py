@@ -1,16 +1,21 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  # Исходный список чисел от 1 до 15
-not_primes = []  # Список для хранения чисел, которые не являются простыми
-primes = []  # Список для хранения простых чисел
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
-for  i in numbers:
-    if  i < 2:
+primes = []
+not_primes = []
+
+for number in numbers:
+    if number == 1:
         continue
     is_prime = True
-    for div in range(2, i):
-        if  i % div == 0:   
-            not_primes.append( i)
+    for i in range(2, number):
+        if number % i == 0:
             is_prime = False
             break
     if is_prime:
-     print(primes)
-     print(not_primes)
+        primes.append(number)
+    else:
+        not_primes.append(number)
+
+print("Простые числа:", primes)
+print(" Не простые числа:", not_primes)
+
